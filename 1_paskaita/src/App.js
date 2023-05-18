@@ -1,7 +1,6 @@
-import "./App.css";
-
 // importai viršuje
 import FuncButton from "./components/FuncButton";
+import "./App.css";
 
 // apibrėžiam komponento pavadinimą, visada didžioji raidė.
 // geroji praktika: Failo pavadinimas toks pat kaip komponento pavadinimas
