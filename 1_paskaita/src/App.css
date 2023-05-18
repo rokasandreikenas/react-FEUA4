@@ -1,38 +1,67 @@
-.App {
+img {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+#cardBox {
+  margin: 1rem;
+  width: 25rem;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+h2 {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+p {
+  padding: 0rem 1rem 1rem 1rem;
+}
+
+#avatarCircle {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#avatarCircle h2 {
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#allAvatars {
+  display: flex;
+  flex-direction: row;
+}
+
+.products {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.productCard {
+  margin: 1rem;
+  width: 20rem;
+}
+
+.productsTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.category {
+  font-size: 0.9rem;
+  color: grey;
+}
+
+.price {
+  font-weight: bold;
 }
