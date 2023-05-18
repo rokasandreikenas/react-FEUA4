@@ -10,7 +10,16 @@ const FuncCar = () => {
   });
 
   const changeColor = () => {
+    // 1 būdas pasiimti iš state objektą
     setState({ ...state, color: "blue" });
+
+    // 2 būdas pasiimti iš setState objektą
+    setState((previouseState) => ({ ...previouseState, color: "blue" }));
+
+    // 3 būdas pasiimti iš setState objektas su return
+    setState((previousState) => {
+      return { ...previousState, color: "blue" };
+    });
   };
 
   return (
