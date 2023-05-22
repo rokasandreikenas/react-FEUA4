@@ -14,7 +14,7 @@ const FuncCar = () => {
     setState({ ...state, color: "blue" });
 
     // 2 būdas pasiimti iš setState objektą
-    setState((previouseState) => ({ ...previouseState, color: "blue" }));
+    setState((previousState) => ({ ...previousState, color: "blue" }));
 
     // 3 būdas pasiimti iš setState objektas su return
     setState((previousState) => {
