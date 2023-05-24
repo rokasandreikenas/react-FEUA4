@@ -4,6 +4,7 @@ import "./Posts.css";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
+  const postsExists = posts.length > 1; // Add checking if posts exists
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
@@ -17,11 +18,17 @@ const Posts = () => {
     // useEffect hooksas, su tuščiu dependency array yra paleidžiamas tik vieną kartą
   }, []);
 
+  console.log(posts.length > 1 ? posts[0].title : "");
+
   return (
     <div className="posts">
       <Post title="Test" body="Hello world" />
-      <Post title={posts[0].title} body={posts[0].body} />
-      <Post title={posts[1].title} body={posts[1].body} />
+      {postsExists && (
+        <>
+          <Post title={posts[0].title} body={posts[0].body} />
+          <Post title={posts[1].title} body={posts[1].body} />
+        </>
+      )}
     </div>
   );
 };
