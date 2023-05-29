@@ -28,13 +28,13 @@ const App = () => {
 
   return (
     <div>
-      {/* <button onClick={handleClick}>Clicke me!</button>
+      <button onClick={handleClick}>Clicke me!</button>
       {ref.current}
       <br />
       <br />
-      <button onClick={focusInput}>Focus on the input</button> */}
+      <button onClick={focusInput}>Focus on the input</button>
       {/* pavyzdys kaip priskirti elementam ref atributą */}
-      {/* <input ref={inputRef} />
+      <input ref={inputRef} />
       <br />
       <h2>Todos</h2>
       <input
@@ -44,7 +44,7 @@ const App = () => {
       />
       <button onClick={handleAddTodo}>Add Todo</button>
       <div>{todos.join(", ")}</div>
-      <br /> */}
+      <br />
       <InputExample />
     </div>
   );
