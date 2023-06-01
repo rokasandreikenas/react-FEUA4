@@ -13,6 +13,7 @@ const themes = {
   },
 };
 // Sukuriamas context kintamasis su pradine reikšme createContext(themes.light)
+// exportuojamas, kad galėtume naudoti kituose failuose
 export const ThemeContext = createContext(themes.light);
 
 const App = () => {
