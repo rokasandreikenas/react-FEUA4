@@ -8,21 +8,19 @@ const Routes = () => {
   const { Layout, routes } = isLoggedIn ? authenticatedRoutes : loginRoutes;
 
   return (
-    <>
-      <RoutesWrapper>
-        {routes.map((route) => (
-          <Route
-            key={route.path}
-            path={route.path}
-            element={
-              <Layout>
-                <route.component />
-              </Layout>
-            }
-          />
-        ))}
-      </RoutesWrapper>
-    </>
+    <RoutesWrapper>
+      {routes.map((route) => (
+        <Route
+          key={route.path}
+          path={route.path}
+          element={
+            <Layout>
+              <route.component />
+            </Layout>
+          }
+        />
+      ))}
+    </RoutesWrapper>
   );
 };
 
