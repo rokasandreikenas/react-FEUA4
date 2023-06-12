@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "name": "Rokas",
+      "surname": "Andreikenas",
+      "date": "1999-11-11",
+      "email": "rokas@gmail.com",
+      "password": "3w*9FYQw8V65JTvOsy$%",
+      "id": 1
+    },
+    {
+      "name": "Tomas",
+      "surname": "Tomukas",
+      "date": "1999-12-12",
+      "email": "tomas@gmail.com",
+      "password": "tomas",
+      "id": 2
+    }
+  ]
+}

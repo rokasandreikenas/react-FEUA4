@@ -6,3 +6,14 @@
   background-color: black;
   color: white;
 }
+
+.navigation a {
+  color: inherit;
+}
+
+a.user-container {
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}

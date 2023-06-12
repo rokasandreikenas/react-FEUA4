@@ -9,13 +9,13 @@ const Routes = () => {
 
   return (
     <RoutesWrapper>
-      {routes.map((route) => (
+      {routes.map(({ path, Component }) => (
         <Route
-          key={route.path}
-          path={route.path}
+          key={path}
+          path={path}
           element={
             <Layout>
-              <route.component />
+              <Component />
             </Layout>
           }
         />

@@ -1,49 +1,46 @@
 import { useContext, useState } from "react";
-import "./Login.css";
+import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
-import Input from "../../components/Input/Input";
+import FormItem from "../../components/FormItem/FormItem";
 import Button from "../../components/Button/Button";
+import { REGISTER_ROUTE } from "../../routes/const";
+import "./Login.css";
 
 const Login = () => {
   const { handleLogin } = useContext(UserContext);
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const user = { username, password };
-    handleLogin(user);
+    const user = { email, password };
+    handleLogin(user, setError);
   };
 
   return (
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
-        <div className="form-item">
-          <div>
-            <label>Username</label>
-          </div>
-          <Input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="input"
-            required
-          />
-        </div>
-        <div className="form-item">
-          <div>
-            <label>Password</label>
-          </div>
-          <Input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="input"
-            required
-          />
-        </div>
+        <FormItem
+          label="Email"
+          containerClassname="form-item"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <FormItem
+          label="Password"
+          containerClassname="form-item"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        {error && <p className="error">{error}</p>}
         <div className="button-container">
           <Button>Login</Button>
+          <Link to={REGISTER_ROUTE}>Register</Link>
         </div>
       </form>
     </div>
