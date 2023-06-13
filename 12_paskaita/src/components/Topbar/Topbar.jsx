@@ -8,7 +8,7 @@ import "./Topbar.css";
 
 const Topbar = () => {
   const { user } = useContext(UserContext);
-  console.log(user);
+
   return (
     <nav className="navigation">
       <div>Logo</div>

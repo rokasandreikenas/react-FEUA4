@@ -9,6 +9,7 @@ const UserContext = createContext({
   handleLogin: () => null,
   handleLogout: () => null,
   handleRegister: () => null,
+  handleUpdateUser: () => null,
 });
 
 const UserProvider = ({ children }) => {
@@ -54,9 +55,31 @@ const UserProvider = ({ children }) => {
       });
   };
 
+  const handleUpdateUser = (updatingUser) => {
+    fetch(`http://localhost:3000/users/${user.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatingUser),
+    })
+      .then((resp) => resp.json())
+      .then((response) => {
+        setUser(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <UserContext.Provider
-      value={{ user, isLoggedIn, handleLogin, handleLogout, handleRegister }}
+      value={{
+        user,
+        isLoggedIn,
+        handleLogin,
+        handleLogout,
+        handleRegister,
+        handleUpdateUser,
+      }}
     >
       {children}
     </UserContext.Provider>
