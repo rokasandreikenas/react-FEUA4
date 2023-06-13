@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { LOGIN_ROUTE } from "../routes/const";
 import { checkUserCredentials } from "../utils/user";
 
@@ -20,8 +21,9 @@ const UserProvider = ({ children }) => {
   // !!{email: "test", password: "asd123"} => true
 
   const handleLogin = (user, setError) => {
-    fetch("http://localhost:3000/users")
-      .then((resp) => resp.json())
+    axios
+      .get("http://localhost:3000/users")
+      .then((resp) => resp.data)
       .then((response) => {
         const existingUser = checkUserCredentials(response, user);
         if (existingUser) {
@@ -41,12 +43,8 @@ const UserProvider = ({ children }) => {
   };
 
   const handleRegister = (newUser) => {
-    fetch("http://localhost:3000/users", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newUser),
-    })
-      .then((resp) => resp.json())
+    axios
+      .post("http://localhost:3000/users", newUser)
       .then(() => {
         navigate(LOGIN_ROUTE);
       })
@@ -56,12 +54,9 @@ const UserProvider = ({ children }) => {
   };
 
   const handleUpdateUser = (updatingUser) => {
-    fetch(`http://localhost:3000/users/${user.id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatingUser),
-    })
-      .then((resp) => resp.json())
+    axios
+      .put(`http://localhost:3000/users/${user.id}`, updatingUser)
+      .then((resp) => resp.data)
       .then((response) => {
         setUser(response);
       })

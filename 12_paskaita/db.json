@@ -15,6 +15,22 @@
       "email": "tomas@gmail.com",
       "password": "tomas",
       "id": 2
+    },
+    {
+      "name": "Kazys",
+      "surname": "Kazysas",
+      "date": "2000-12-12",
+      "email": "kazys@gmail.com",
+      "password": "kazys",
+      "id": 3
+    },
+    {
+      "name": "Bronius",
+      "surname": "Broniukas",
+      "date": "2000-12-12",
+      "email": "bronius@gmail.com",
+      "password": "bronius",
+      "id": 4
     }
   ]
 }
