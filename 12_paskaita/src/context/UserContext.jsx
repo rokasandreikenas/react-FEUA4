@@ -14,7 +14,7 @@ const UserContext = createContext({
 });
 
 const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // null | {email: "test", password: "asd123"}
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user"))); // null | {email: "test", password: "asd123"}
   const isLoggedIn = !!user; // null | {email: "test", password: "asd123"}
   const navigate = useNavigate();
   // !!null => false
@@ -28,6 +28,7 @@ const UserProvider = ({ children }) => {
         const existingUser = checkUserCredentials(response, user);
         if (existingUser) {
           setUser(existingUser);
+          localStorage.setItem("user", JSON.stringify(existingUser));
         } else {
           setError("User email or password is incorrect.");
         }
@@ -39,6 +40,7 @@ const UserProvider = ({ children }) => {
 
   const handleLogout = () => {
     setUser(null);
+    localStorage.setItem("user", null);
     navigate(LOGIN_ROUTE);
   };
 
@@ -59,6 +61,7 @@ const UserProvider = ({ children }) => {
       .then((resp) => resp.data)
       .then((response) => {
         setUser(response);
+        localStorage.setItem("user", JSON.stringify(response));
       })
       .catch((error) => {
         console.error(error);
