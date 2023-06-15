@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "name": "Rokelis",
+      "name": "Rokas",
       "surname": "Andreikenas",
       "date": "2000-11-11",
       "email": "rokas@gmail.com",
@@ -31,6 +31,14 @@
       "email": "bronius@gmail.com",
       "password": "bronius",
       "id": 4
+    },
+    {
+      "name": "tokas",
+      "surname": "tokas",
+      "date": "2022-12-12",
+      "email": "tokas@gmail.com",
+      "password": "tokas",
+      "id": 5
     }
   ],
   "projects": [
