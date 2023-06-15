@@ -13,6 +13,20 @@
     background-color: $primaryDark;
   }
 
+  &.error {
+    background-color: $errorMain;
+    border-color: $errorMain;
+
+    &:hover {
+      background-color: $errorDark;
+    }
+  }
+
+  &.success {
+    background-color: $successMain;
+    border-color: $successDark;
+  }
+
   &.outlined {
     background-color: white;
     color: $primaryMain;

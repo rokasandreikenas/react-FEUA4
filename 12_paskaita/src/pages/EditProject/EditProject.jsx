@@ -2,11 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 import { getProject } from "../../api/projects";
-import "./Project.scss";
-import ProjectGeneralInfo from "./ProjectGeneralInfo.jsx";
-import ProjectActions from "./ProjectActions";
+import NewProject from "../NewProject/NewProject";
 
-const Project = () => {
+const EditProject = () => {
   const { id } = useParams();
   const [project, setProject] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -33,12 +31,7 @@ const Project = () => {
     return <div>Project not found</div>;
   }
 
-  return (
-    <div className="project-container">
-      <ProjectActions id={project.id} />
-      <ProjectGeneralInfo project={project} />
-    </div>
-  );
+  return <NewProject project={project} />;
 };
 
-export default Project;
+export default EditProject;
