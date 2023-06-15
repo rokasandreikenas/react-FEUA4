@@ -8,7 +8,7 @@ import { PROJECTS_ROUTE, PROJECT_ROUTE } from "../../routes/const";
 
 // TODO write PropTypes from project;
 
-const formatDate = (date) => date.split("T")[0]; // yyyy-mm-dd TOOD move to date utils
+const formatDate = (date) => date.split("T")[0]; // yyyy-mm-dd TODO move to date utils
 
 const NewProject = ({ project }) => {
   const { user } = useContext(UserContext);
